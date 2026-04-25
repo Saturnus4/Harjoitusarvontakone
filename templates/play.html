@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Loading...</title>
+</head>
+<body>
+
+<script>
+    const youtubeLink = "{{ song['youtube'] }}";
+
+    if (youtubeLink) {
+        // Open YouTube in new tab
+        window.open(youtubeLink, "_blank");
+
+        // Redirect current tab to reveal page
+        window.location.href = "/reveal";
+    }
+</script>
+
+</body>
+</html>

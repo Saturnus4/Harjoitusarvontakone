@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Viikon Kappale</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        h1 {
+            font-size: 64px;
+            margin-bottom: 40px;
+        }
+
+        .song-info {
+            font-size: 32px;
+            line-height: 1.6;
+            margin-bottom: 50px;
+        }
+
+        a {
+            font-size: 24px;
+            text-decoration: none;
+            color: white;
+            background-color: #3498db;
+            padding: 15px 30px;
+            border-radius: 10px;
+            transition: 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Viikon Kappale</h1>
+
+    <div class="song-info">
+        {{ song['description'] | replace('\n', '<br>') | safe }}
+    </div>
+
+    <a href="/">Takaisin</a>
+
+<script>
+    const shouldPlay = "{{ play }}";
+    const youtubeLink = "{{ song['youtube'] }}";
+
+    if (shouldPlay === "1" && youtubeLink) {
+        window.open(youtubeLink, "_blank");
+    }
+</script>
+
+</body>
+</html>
+

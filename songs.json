@@ -1,0 +1,18 @@
+@app.route("/generate")
+def generate():
+    weights = [song[1] for song in songs]
+    selected = random.choices(songs, weights=weights, k=1)[0]
+
+    description, weight, youtube_link = selected
+    session["song"] = {"description": description, "youtube": youtube_link}
+
+    return f'''
+        <script>
+            window.open("{youtube_link}", "_blank");
+            window.location.href = "/reveal";
+        </script>
+    '''
+
+
+
+
