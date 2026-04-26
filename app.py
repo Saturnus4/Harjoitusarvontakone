@@ -735,7 +735,7 @@ from flask import redirect
 
 @app.route("/generate")
 def generate():
-    allowed_countries = ["Belarus", "Poland"]
+    allowed_countries = ["Germany", "Azerbaijan", "Australia", "Belarus", "Poland"]
     while True:
         weights = [song[1] for song in songs]
         selected = random.choices(songs, weights=weights, k=1)[0]
