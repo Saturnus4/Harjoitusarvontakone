@@ -12,13 +12,13 @@ app.secret_key = "secretkey"
 
 #Tämä on harjoitusversio arvontakoneesta
 
-Pohja = 5
+Pohja = 10 #5
 Finaali = 1 #5
 Top10 = 1 #7
 Top3 = 1 #9
 Suosikki = 1 #6
 Suosikkitop = 1 #4
-Extra = 5 #9
+Extra = 10 #9
 
 
 songs = [
@@ -731,11 +731,11 @@ def index():
 
 from flask import redirect
 
-#"Germany", "Azerbaijan", "Australia", "Belarus"
+#"Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel"
 
 @app.route("/generate")
 def generate():
-    allowed_countries = ["Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel"]
+    allowed_countries = ["Azerbaijan", "Belarus", "Poland", "Israel"]
     while True:
         weights = [song[1] for song in songs]
         selected = random.choices(songs, weights=weights, k=1)[0]
