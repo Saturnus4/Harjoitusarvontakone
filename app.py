@@ -731,11 +731,11 @@ def index():
 
 from flask import redirect
 
-#"Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel"
+#"Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel", "Georgia"
 
 @app.route("/generate")
 def generate():
-    allowed_countries = ["Azerbaijan", "Belarus", "Poland", "Israel"]
+    allowed_countries = ["Belarus", "Poland", "Israel", "Georgia"]
     while True:
         weights = [song[1] for song in songs]
         selected = random.choices(songs, weights=weights, k=1)[0]
