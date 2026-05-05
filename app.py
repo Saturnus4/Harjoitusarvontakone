@@ -454,7 +454,7 @@ songs = [
 ("Circles \nMaa: N.Macedonia\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=zvOihqB4eKk&list=RDzvOihqB4eKk&start_radio=1"),
 ("Guilty Pleasure \nMaa: Croatia\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=9vBQdtW3mJE&list=RD9vBQdtW3mJE&start_radio=1"),
 ("Ela \nMaa: Cyprus\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=W2IUdTl-gAI&list=RDW2IUdTl-gAI&start_radio=1"),
-("Sekret \nMaa: Albania\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=FuLIDqZ3waQ&list=RDFuLIDqZ3waQ&start_radio=1"),
+("Sekret \nMaa: Albania\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=_jWXmo0-ZjI&list=RD_jWXmo0-ZjI&start_radio=1"),
 ("I.M \nMaa: Israel\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=XgXjPUsjx4Y&list=RDXgXjPUsjx4Y&start_radio=1"),
 ("The Show \nMaa: Denmark\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=cVg6MpVR2Pw&list=RDcVg6MpVR2Pw&start_radio=1"),
 ("Eat Your Salad \nMaa: Latvia\nVuosi: 2022 \nSija: Ei päässyt finaaliin", Pohja, "https://www.youtube.com/watch?v=TM0_0WfuxSk&list=RDTM0_0WfuxSk&start_radio=1"),
@@ -731,11 +731,11 @@ def index():
 
 from flask import redirect
 
-#"Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel", "Georgia", "Switzerland", "Albania"
+#"Germany", "Azerbaijan", "Australia", "Belarus", "Poland", "Israel", "Georgia", "Switzerland", "Albania", "Croatia"
 
 @app.route("/generate")
 def generate():
-    allowed_countries = ["Israel", "Georgia", "Switzerland", "Albania"]
+    allowed_countries = ["Israel", "Georgia", "Switzerland", "Albania", "Croatia"]
     while True:
         weights = [song[1] for song in songs]
         selected = random.choices(songs, weights=weights, k=1)[0]
